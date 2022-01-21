@@ -1,0 +1,122 @@
+/* COMMON */
+.inner {
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+img {
+    display: block; 
+    /* img 태그를 포함한 인라인 요소는 글자를 취급하기 때문에, 소문자 y 등 아래로 삐져나오는 철자를 위한 baseline 즉 아래 여백을 기본적으로 가지고 있음. 
+    그래서 block 요소로 바꿔주면 해당 여백을 없앨 수 있다. */
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 헤더 영역 */
+header {
+    background-color: #f6f5f0;
+    border-bottom: 1px solid #c8c8c8;
+}
+
+header .inner {
+    max-width: 1100px;
+    height: 120px;
+    position: relative;
+    margin: 0 auto;
+}
+
+header .inner .logo {
+    height: 75px; /* 브라우저가 margin을 자동으로 계산할 수 있으려면 height또는 width를 정확히 알아야 함 */
+    position: absolute;
+    top: 0; /* 여백 계산 시의 기준점이라고 생각하면 될 듯 */
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+header .sub-menu {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    display: flex;
+}
+
+header .sub-menu ul.menu {
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+header .sub-menu ul.menu li {
+    position: relative;
+}
+
+header .sub-menu ul.menu li::before { /* 가상 요소 선택자: HTML 구조상의 요소가 아니고, 디스플레이상 보여지기만 하도록 CSS로 꾸며낸 것 */
+    content: "";
+    width: 1px;
+    height: 12px;
+    background-color: #e5e5e5;
+    position: absolute; 
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+header .sub-menu ul.menu li:first-child::before {
+  display: none;
+}
+
+header .sub-menu ul.menu li a {
+    display: block;
+    padding: 11px 16px;
+    color: #656565;
+    font-size: 12px;
+}
+
+header .sub-menu ul.menu li a:hover {
+    color: #000
+
+}
+
+header .sub-menu .search {
+    position: relative;
+    height: 34px;
+    /* width는 따로 설정하지 않음: Flex 아이템들은 가로 방향으로 배치되고, 자신이 가진 내용물의 width 만큼만 차지 */
+}
+
+header .sub-menu .search input {
+    width: 36px;
+    height: 34px;
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    color: #777;
+    font-size: 12px;
+    transition: width .4s;
+}
+
+header .sub-menu .search input:focus {
+    width: 190px;
+    border-color: #669900;
+}
+
+header .sub-menu .search .material-icons {
+    position: absolute;
+    height: 24px;
+    top: 0;
+    bottom: 0;
+    right: 5px;
+    margin: auto;
+    transition: .4s;
+}
+
+header .sub-menu .search.focused .material-icons {
+    opacity: 0;
+}
