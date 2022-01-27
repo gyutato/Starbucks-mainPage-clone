@@ -45,7 +45,10 @@
    
     <!-- 배지 숨김 및 보이기를 자연스럽게 하기 위한 애니메이션(라이브러리) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    
+    <!-- iFrame API -->
+    <script defer src="/assets/js/youtube.js"></script>
+    
     <script defer src="/assets/js/main.js"></script>
 </head>
 <body>
@@ -471,8 +474,25 @@
 
     <!-- 리워즈 섹션 시작 -->
     <section class="rewards">
-        <div class="inner"></div>
+        <div class="bg-left"></div>
+        <div class="bg-right"></div>
+        <div class="inner">
+            <div class="btn-group">
+                <div class="btn btn--reverse sign-up">회원가입</div>
+                <div class="btn sign-in">로그인</div>
+                <div class="btn gift">e-gift 선물하기</div>
+            </div>
+        </div>
     </section>
     <!-- // 리워즈 섹션 마침 -->
+
+    <!-- 유튜브 영상 섹션 시작 -->
+    <section class="youtube">
+        <div class="youtube__area">
+            <div id="player"></div>
+        </div>
+        <div class="youtube__cover"></div>
+    </section>
+    <!-- // 유튜브 영상 섹션 마침 -->
 </body>
 </html>
