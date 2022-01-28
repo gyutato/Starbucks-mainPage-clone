@@ -90,3 +90,29 @@ promotionToggleBtn.addEventListener('click', function() {
         promotionEl.classList.remove('hide');
     }
 });
+
+//범위 랜덤 함수(소수점 2자리까지)
+function random(min, max) {
+    return parseFloat((Math.random() * (max - min) + min).toFixed(2));
+    /* toFixed()를 통해 반환된 문자 데이터를,
+    parseFloat()을 통해 소수점을 갖는 숫자 데이터로 변환 */
+}
+
+function floatingObject(selector, delay, size) {
+    // gsap.to(요소, (지속)시간, 옵션);
+    gsap.to(
+        selector, // 선택자
+        random(1.5, 2.5), // 애니메이션 동작 시간. 최소 1.5초 ~ 최대 2.5초 사이의 랜덤한 시간동안 지속
+        { // 옵션
+            y: size,
+            repeat: -1, // 무한반복 (이 라이브러리에서만)
+            yoyo: true, // 한 번 재생된 애니메이션을 역재생할 수 있게 함
+            ease: Power1.easeInOut, // GSAP의 Tweenmax를 사용한 제어. TweenMax.to(graph, 2.5, { ease: Power1.easeInOut, y: -500 });
+            delay: random(0, delay) // 최초 동작 전 지연시간. 바로 시작(0초) ~ 요소 별 딜레이 시간(함수로 지정) 사이의 랜덤한 시간동안 지연
+        }
+    );
+}
+
+floatingObject('.floating', 1, 15);
+floatingObject('.floating', .5, 15);
+floatingObject('.floating', 1.5, 20);

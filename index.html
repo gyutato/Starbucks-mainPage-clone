@@ -43,12 +43,12 @@
     <!-- 스크롤 제어를 위해 라이브러리 lodash 연결 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    
-    <!-- 배지 숨김 및 보이기를 자연스럽게 하기 위한 애니메이션(라이브러리) -->
+    <!-- 배지 숨김 및 보이기를 자연스럽게 하기 위한 애니메이션(라이브러리): GSAP. Tweens를 포함하고 있다 (TweenLite, Tweenmax 등) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <!-- iFrame API -->
     <script defer src="/assets/js/youtube.js"></script>
-    
+
     <script defer src="/assets/js/main.js"></script>
 </head>
 <body>
@@ -491,7 +491,13 @@
         <div class="youtube__area">
             <div id="player"></div>
         </div>
-        <div class="youtube__cover"></div>
+        <div class="youtube__cover">
+            <div class="inner">
+                <img src="/assets/images/floating1.png" alt="Icon" class="floating floating1" />
+                <img src="/assets/images/floating2.png" alt="Icon" class="floating floating2" />
+                <img src="/assets/images/floating3.png" alt="Icon" class="floating floating3" />
+            </div>
+        </div>
     </section>
     <!-- // 유튜브 영상 섹션 마침 -->
 </body>
