@@ -5,7 +5,6 @@ body {
     font-weight: 400;
     line-height: 1.4;
     font-family: 'Nanum Gothic', sans-serif;
-    height: 3000px;
 }
 
 img {
@@ -648,7 +647,6 @@ header .badges .badge {
 
 .youtube .inner {
     height: 700px;
-    background-color: royalblue;
 }
 
 .youtube .floating1 {
@@ -663,8 +661,94 @@ header .badges .badge {
     left: 150px;
 }
 
-.youtube .floating3 {
+/* SEASON PRODUCT */
+.season-product {
+    background-image: url("/assets/images/season_product_bg.jpg");
+}
+
+.season-product .inner {
+    height: 400px;
+}
+
+.season-product .text-group {
     position: absolute;
-    bottom: -200px;
+    top: 110px;
+    right: 100px;
+}
+
+.season-product .text-group .title {
+    margin-bottom: 10px;
+}
+
+.season-product .text-group .description {
+    margin-bottom: 15px;
+}
+
+.season-product .text-group .more {
+    
+}
+
+.season-product .floating3 {
+    /* 2. CSS상에서 부모 요소를 .youtube가 아닌 .season-product로 바꿔 주어야 제대로 스타일이 적용될 수 있음! */
+    position: absolute;
+    top: -200px; 
+    /* 3. 원래 bottom: 200px이었던 부분을 top: -200px로 바꿔 줌. 
+    아래에서 200px만큼 올라갔다는 것은, 위에서부터 -200만큼 내려갔다는 것과 같음 */
     right: 0;
+}
+
+/* RESERVE COFFEE */
+.reserve-coffee {
+    background-image: url("/assets/images/reserve_bg.jpg");
+}
+
+.reserve-coffee .inner {
+    height: 400px;
+}
+
+.reserve-coffee .reserve-logo {
+    position: absolute;
+    top: 110px;
+    left: 0;
+}
+
+.reserve-coffee .text-group {
+    position: absolute;
+    top: 124px;
+    left: 208px;
+}
+
+.reserve-coffee .product {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* PICK YOUR FAVORITE */
+.pick-your-favorite {
+    background-image: url("/assets/images/favorite_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.pick-your-favorite .inner {
+    padding: 110px 0;
+}
+
+.pick-your-favorite .text-group {
+    margin-left: 100px;
+    display: flex;
+    width: 362px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.pick-your-favorite .text-group .title {
+    margin-bottom: 40px;
+}
+
+.pick-your-favorite .text-group .description {
+    margin-bottom: 40px;
 }

@@ -113,6 +113,6 @@ function floatingObject(selector, delay, size) {
     );
 }
 
-floatingObject('.floating', 1, 15);
-floatingObject('.floating', .5, 15);
-floatingObject('.floating', 1.5, 20);
+floatingObject('.floating1', 1, 15);
+floatingObject('.floating2', .5, 15);
+floatingObject('.floating3', 1.5, 20);
