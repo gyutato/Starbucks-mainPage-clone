@@ -116,3 +116,15 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15);
 floatingObject('.floating2', .5, 15);
 floatingObject('.floating3', 1.5, 20);
+
+// 스크롤 위치 계산 애니메이션
+const spyEls = document.querySelectorAll('section.scroll-spy');
+spyEls.forEach(function(spyEl) {
+    new ScrollMagic
+        .Scene({
+            triggerElement: spyEl, // 1. 보여짐 여부를 감시할 요소를 지정
+            triggerHook: .8 // 2. 뷰포트의 맨 위는 0, 맨 아래는 1이라고 했을 때 내가 감시하려는 요소가 쭉 올라오다가 뷰포트의 0.8 지점에 걸리면(hook)
+        })
+        .setClassToggle(spyEl, 'show') // 3. 이 메소드를 실행한다. ({토글을 걸 요소}, {토글로 달 (클래스) 이름})
+        .addTo(new ScrollMagic.Controller());
+});

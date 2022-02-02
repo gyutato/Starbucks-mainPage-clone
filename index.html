@@ -49,6 +49,9 @@
     <!-- iFrame API -->
     <script defer src="/assets/js/youtube.js"></script>
 
+    <!-- scrollMagic CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script defer src="/assets/js/main.js"></script>
 </head>
 <body>
@@ -501,15 +504,17 @@
     <!-- // 유튜브 영상 섹션 마침 -->
 
     <!-- 시즌 제품 섹션 시작 -->
-    <section class="season-product">
+    <section class="season-product scroll-spy">
         <div class="inner">
           <!-- 1. 플로팅 요소 중 3번만 .youtube 섹션의 overflow: hidden에 의해 잘리기 때문에 섹션을 옮겨 줌 -->
           <img src="/assets/images/floating3.png" alt="Icon" class="floating floating3" />
-          <img src="/assets/images/season_product_image.png" alt="" class="product" />
+          <img src="/assets/images/season_product_image.png" alt="" class="product back-to-position to-right delay-0" />
           <div class="text-group">
-            <img src="/assets/images/season_product_text1.png" alt="" class="title" />
-            <img src="/assets/images/season_product_text2.png" alt="" class="description" />
-            <div class="more">
+            <img src="/assets/images/season_product_text1.png" alt="" class="title back-to-position to-left delay-1" />
+            <img src="/assets/images/season_product_text2.png" alt="" class="description back-to-position to-left delay-2" />
+            <!-- 굳이 버튼을 div요소로 다시 감싼 이유: back-to-position의 transition 효과는 1s인데, 
+            btn은 이미 .4의 효과를 갖고 있음. 그래서 전환효과가 중복될 수 있으므로 새로 div요소로 감싸서 클래스를 부여함. -->
+            <div class="more back-to-position to-left delay-3">
               <a href="javascript:void(0)" class="btn">자세히 보기</a>
             </div>
           </div>
@@ -518,27 +523,27 @@
     <!-- // 시즌 제품 섹션 마침 -->
 
     <!-- 리저브 섹선 시작 -->
-    <section class="reserve-coffee">
+    <section class="reserve-coffee scroll-spy">
       <div class="inner">
-        <img src="/assets/images/reserve_logo.png" alt="" class="reserve-logo" />
+        <img src="/assets/images/reserve_logo.png" alt="" class="reserve-logo back-to-position to-right delay-0" />
         <div class="text-group">
-          <img src="/assets/images/reserve_text.png" alt="" class="description">
-          <div class="more">
+          <img src="/assets/images/reserve_text.png" alt="" class="description back-to-position to-right delay-1">
+          <div class="more back-to-position to-right delay-2">
             <a href="javascript:void(0)" class="btn btn--gold"> 자세히 보기</a>
           </div>
         </div>
-        <img src="/assets/images/reserve_image.png" alt="" class="product">
+        <img src="/assets/images/reserve_image.png" alt="" class="product back-to-position to-left delay-3">
       </div>
     </section>
     <!-- // 리저브 섹션 마침 -->
 
     <!-- 페이버릿 섹션 시작 -->
-    <section class="pick-your-favorite">
+    <section class="pick-your-favorite scroll-spy">
       <div class="inner">
         <div class="text-group">
-          <img src="/assets/images/favorite_text1.png" alt="" class="title" />
-          <img src="/assets/images/favorite_text2.png" alt="" class="description" />
-          <div class="more">
+          <img src="/assets/images/favorite_text1.png" alt="" class="title back-to-position to-right delay-0" />
+          <img src="/assets/images/favorite_text2.png" alt="" class="description back-to-position to-right delay-1" />
+          <div class="more back-to-position to-right delay-2">
             <a href="javascript:void(0)" class="btn btn--white">자세히 보기</a>
           </div>
         </div>
@@ -561,5 +566,23 @@
       </div>
     </section>
     <!-- // 스토어 섹션 마침 -->
+
+    <!-- 매장 찾기 섹션 시작 -->
+    <section class="find-store scroll-spy">
+      <div class="inner">
+        <img src="/assets/images/find_store_texture1.png" alt="" class="texture1" />
+        <img src="/assets/images/find_store_texture2.png" alt="" class="texture2" />
+        <img src="/assets/images/find_store_picture1.jpg" alt="" class="picture picture1 back-to-position to-right delay-0" />
+        <img src="/assets/images/find_store_picture2.jpg" alt="" class="picture picture2 back-to-position to-right delay-1" />
+        <div class="text-group">
+          <img src="/assets/images/find_store_text1.png" alt="" class="title back-to-position to-left delay-0" />
+          <img src="/assets/images/find_store_text2.png" alt="" class="description back-to-position to-left delay-1" />
+          <div class="more back-to-position to-left delay-2">
+            <a href="javascript:void(0)" class="btn">매장찾기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- // 매장 찾기 섹션 마침 -->
 </body>
 </html>
