@@ -139,3 +139,6 @@ spyEls.forEach(function(spyEl) {
         .setClassToggle(spyEl, 'show') // 3. 이 메소드를 실행한다. ({토글을 걸 요소}, {토글로 달 (클래스) 이름})
         .addTo(new ScrollMagic.Controller());
 });
+
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear();
