@@ -17,6 +17,10 @@ searchInputEl.addEventListener('blur', function() {
 });
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top'); 
+/* 아래 보이기/숨기기 함수에서 to-top 요소는 querySelector로 찾지 않고 gsap.to()의 인자 부분에서 바로 '#to-top'이라고 호출할 수도 있다.
+그러나 이렇게 한 번 찾고, 그 아래 addEventListener에서 다시 찾아야 하므로 결국 두 번 탐색하게 된다.
+따라서 효율성을 높이기 위해 그냥 가장 상단에서 처음부터 querySelector로 찾아 준다. */
 
 window.addEventListener('scroll', _.throttle(function() {
     if (window.scrollY > 500) {
@@ -30,16 +34,30 @@ window.addEventListener('scroll', _.throttle(function() {
             우선 opacity 값을 0으로 서서히 안보이게 한 다음, display 속성을 사용해 아예 구조상으로 사라지게 하는 방법을 사용함. */
             display: 'none'
         })
+        // 버튼 보이기
+        gsap.to(toTopEl, .2, {
+            x: 0
+        })
     } else {
         // 배지 보이기
         gsap.to(badgeEl, .6, {
             opacity: 1,
             display: 'block'
         })
+        // 버튼 숨기기
+        gsap.to(toTopEl, .2, {
+            x: 100
+        })
     }
 }, 300)); 
 // _.throttle(함수, 시간(ms))
 // 함수의 실행에 시간만큼의 부하를 줌
+
+toTopEl.addEventListener('click', function() {
+    gsap.to(window, .7, {
+        scrollTo: 0
+    })
+}); 
 
 const fadeEls = document.querySelectorAll('.visual .fade-in');
 fadeEls.forEach(function(fadeEl, index) {
