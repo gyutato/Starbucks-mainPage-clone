@@ -122,6 +122,7 @@ header {
     width: 100%;
     position: fixed;
     background-color: #f6f5f0;
+    border-top: 2px solid #272727;
     border-bottom: 1px solid #c8c8c8;
     top: 0;
     z-index: 9;
@@ -143,7 +144,7 @@ header .inner .logo {
 header .sub-menu {
     position: absolute;
     top: 10px;
-    right: 0;
+    right: 40px;
     display: flex;
 }
 
@@ -238,6 +239,7 @@ header .main-menu .item .item__name {
     padding: 10px 20px 34px 20px;
     font-family: Arial, sans-serif;
     font-size: 13px;
+    font-weight: 100;
 }
 
 header .main-menu .item:hover .item__name {
@@ -311,15 +313,15 @@ header .main-menu .item .item__contents .contents__texture p {
 
 header .badges {
     position: absolute;
-    top: 132px;
-    right: 12px;
+    top: 152px;
+    right: 24px;
 }
 
 header .badges .badge {
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 12px;
-    box-shadow: 4px 4px 10px rgba(0,0,0,.15);
+    /* box-shadow: 2px 2px 10px rgba(0,0,0,.15); */
     cursor: pointer;
 }
 
@@ -733,7 +735,10 @@ header .badges .badge {
 
 /* RESERVE COFFEE */
 .reserve-coffee {
-    background-image: url("/assets/images/reserve_bg.jpg");
+    background-image: url("/assets/newImages/reserve_bg.png");
+    background-repeat: no-repeat;
+    background-position-y: 50px;
+    background-position-x: -280px;
 }
 
 .reserve-coffee .inner {
