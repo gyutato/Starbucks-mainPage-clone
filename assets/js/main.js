@@ -75,6 +75,7 @@ new Swiper('.notice-line .swiper-container', {
     autoplay: true,
     loop: true
 });
+
 // new Swiper(선택자, 옵션)
 new Swiper('.promotion .swiper-container', {
     direction: 'horizontal', /* 기본값 */

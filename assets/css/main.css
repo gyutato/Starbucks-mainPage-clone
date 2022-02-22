@@ -29,7 +29,7 @@ a {
     border: 2px solid #333;
     border-radius: 4px;
     color: #333;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     text-align: center;
     cursor: pointer;
@@ -83,6 +83,15 @@ a {
     background-color: #fff;
 }
 
+.btn.btn--pink {
+    color: #E95A87;
+    border-color: #E95A87;
+}
+
+.btn.btn--pink:hover {
+    background-color: rgba(255, 255, 255, 0.26);
+}
+
 .back-to-position {
     opacity: 0;
     transition: 1s;
@@ -123,7 +132,7 @@ header {
     position: fixed;
     background-color: #f6f5f0;
     border-top: 2px solid #272727;
-    border-bottom: 1px solid #c8c8c8;
+    border-bottom: 1px solid #c8c8c883;
     top: 0;
     z-index: 9;
 }
@@ -231,10 +240,6 @@ header .main-menu {
     z-index: 1;
 }
 
-header .main-menu .item {
-    
-}
-
 header .main-menu .item .item__name {
     padding: 10px 20px 34px 20px;
     font-family: Arial, sans-serif;
@@ -328,54 +333,53 @@ header .badges .badge {
 /* VISUAL */
 .visual {
     margin-top: 120px;
-    background-image: url("/assets/images/visual_bg.jpg");
+    background-image: url("/assets/newImages/2022_Spring_main_bg.jpeg");
     background-position: center;
 }
 
 .visual .inner {
+    width: 1130px;
     height: 646px;
 }
 
 .visual .title {
     position: absolute; /* 구조상 부모 요소는 inner (여기서 선택자로 밝혀 적지 않았을 뿐) */
-    top: 88px;
-    left: -10px;
+    top: 9.6%;
+    left: 6px;
 }
 
-.visual .title .btn {
+.visual a {
     position: absolute;
-    top: 259px;
-    left: 173px; 
+    line-height: 1em;
+    bottom: -72px;
+    left: 50%;
+    margin-left: calc(128px / -2);
+    font-size: 15px;
+    height: 38px;
+    width: 128px;
+}
+
+.visual .visual-set {
+    height: 100%;
 }
 
 .visual .cup1.image {
     position: absolute; /* 부모 요소와 묶어둠으로써 타이틀이 이동해도 자동으로 따라감 */
-    bottom: 0;
-    right: -47px;
-}
-
-.visual .cup1.text {
-    position: absolute;
-    top: 38px;
-    right: 171px;
+    top: 25.9%;
+    left: 22%;
+    width: 49%;
 }
 
 .visual .cup2.image { 
     position: absolute;
-    bottom: 0;
-    right: 162px;
+    top: 5.2%;
+    left: 39.6%;
 }
 
-.visual .cup2.text {
+.visual .cup3.image {
     position: absolute;
-    top: 321px;
-    right: 416px;
-}
-
-.visual .spoon {
-    position: absolute;
-    bottom: 0;
-    left: 275px;
+    top: 19.2%;
+    right: -11.2%;
 }
 
 .visual .fade-in {
@@ -397,7 +401,7 @@ header .badges .badge {
     left: 0;
     width: 50%;
     height: 100%;
-    background-color: #333;
+    background-color: #000;
 }
 
 .notice .notice-line .bg-right {
@@ -411,25 +415,29 @@ header .badges .badge {
 
 .notice .notice-line .inner {
     display: flex;
+    align-items: center;
     height: 62px;
+    width: 960px;
 }
 
 .notice .notice-line .inner__left {
     display: flex;
     align-items: center;
-    width: 60%;
+    margin: 0 0 0 20px;
+    padding-left: 20px;
+    width: 50%;
     height: 100%;
-    background-color: #333;
+    background-color: #000;
     color: #fff;    
 }
 
 .notice .notice-line .inner__left h2 {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 700;
-    margin-right: 20px;
 }
 
 .notice .notice-line .inner__left .swiper-container {
+    padding-left: 20px;
     height: 62px; 
     flex-grow: 1;
     overflow: hidden;
@@ -442,12 +450,14 @@ header .badges .badge {
 }
 
 .notice .notice-line .inner__left .swiper-slide a {
+    font-size: 14px;
     color: #fff;
 }
 
 .notice .notice-line .inner__left .notice-line__more {
     width: 62px;
     height: 62px;
+    margin-left: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -459,10 +469,11 @@ header .badges .badge {
 }
 
 .notice .notice-line .inner__right {
-    width: 40%;
+    width: 50%;
     height: 100%;
+    box-sizing: border-box;
+    padding-left: 160px;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
 }
 
@@ -529,6 +540,7 @@ header .badges .badge {
     bottom: 40px;
     left: 0;
     right: 0;
+    z-index: 0; /* 이걸 0으로 해주지 않으면 헤더 위로 뜬다.. 어째서인지는 아직 모름 ... */
 }
 
 .notice .promotion .swiper-pagination .swiper-pagination-bullet {
@@ -556,10 +568,10 @@ header .badges .badge {
     border-radius: 50%;
     position: absolute;
     top: 300px;
-    z-index: 1;
     cursor: pointer;
     outline: none;
     display: flex;
+    z-index: 1;
     justify-content: center;
     align-items: center;
     transition: .4s;
@@ -583,55 +595,96 @@ header .badges .badge {
 
 /* REWARDS */
 .rewards {
-    position: relative;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: #1e3932;
 }
 
 .rewards .inner {
-    background-image: url("/assets/images/rewards.jpg");
-    height: 241px;
-}
-
-.rewards .bg-left {
-    width: 50%;
-    height: 100%;
-    background-color: #272727;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.rewards .bg-right {
-    width: 50%;
-    height: 100%;
-    background-color: #d5c798;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.rewards .btn-group { 
-    /* 구조상의 부모 요소는 .inner이다. 여기서 .rewards .inner에는 포지션 값이 없지만,
-    문서 최상단 전역 속성에서 inner의 포지션 값을 지정해 두었으므로 공통으로 적용되는 중.
-    이런 식으로 inner라는 클래스는 구조상의 부모 요소로 쓰일 일이 많기 때문에 전역 속성으로 포지션 값을 부여해 두는 것이 좋다 */
-    position: absolute;
-    bottom: 24px;
-    right: 0;
-    width: 250px;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1080px;
+    margin: 0 auto;
 }
 
-.rewards .btn-group .btn.sign-up {
-    margin-right: 10px;
+.rewards .inner .rewards-logo {
+    margin: 0 40px;
 }
 
-.rewards .btn-group .btn.sign-in {
-    width: 110px;
+.rewards .inner .rewards-logo img {
+    width: 176px;
 }
 
-.rewards .btn-group .btn.gift{
-    margin-top: 10px;
-    flex-grow: 1; /* 은근 자주 쓰이는 중. 최대로 늘어나라! (default가 0이라서) */
+.rewards .inner .rewards-contents {
+    color: #fff;
+    width: 960px;
+    margin-right: 30px;
+}
+
+.rewards .inner .text-upper {
+    position: relative;
+    margin-bottom: 22px;
+    border-bottom: 1px solid #4b615b;
+}
+
+.rewards .inner .text-upper .info {
+    margin-bottom: 12px;
+}
+
+.rewards .inner .text-upper h2 {
+    line-height: 1.4;
+    margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.rewards .inner .text-upper p {
+    line-height: 1.4;
+    font-size: 16px;
+}
+
+.rewards .inner .text-upper .btn-group {
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+}
+
+.rewards .inner .text-upper .btn-group .btn {
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+.rewards .inner .text-upper .btn-group .btn--white {
+    width: 84px;
+    margin-left: 10px;
+}
+
+.rewards .inner .text-upper .btn-group .btn--reverse {
+    width: 96px;
+    border: 2px solid #00704A;
+    border-radius: 4px;
+    background-color: #00704A;
+}
+
+.rewards .inner .text-below {
+    position: relative;
+}
+
+.rewards .inner .text-below p {
+    font-size: 14px;
+}
+
+.rewards .inner .text-below a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+}
+
+.rewards .inner .text-below .btn {
+    width: calc(84px + 15px + 96px);
+    padding: 8px 0;
 }
 
 /* YOUTUBE */
@@ -699,72 +752,117 @@ header .badges .badge {
 
 /* SEASON PRODUCT */
 .season-product {
-    background-image: url("/assets/images/season_product_bg.jpg");
+    position: relative;
+    background-color: #f9e8ee;
+    background-image: url("/assets/newImages/season-bg.jpeg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .season-product .inner {
-    height: 400px;
+    height: 572px;
+}
+
+.season-product::before, /* 왜 이너의 전후가 아니고 전체 div의 전후인지.. 의문.. */
+.season-product::after {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    background-position: center top;
+    background-repeat: no-repeat;
+    content: '';
+}
+
+.season-product::before {
+    left: 0;
+    width: 520px;
+    height: 573px;
+    background-image: url("/assets/newImages/season-deco-left.png");
+}
+
+.season-product::after {
+    right: 0;
+    width: 520px;
+    height: 573px;
+    background-image: url("/assets/newImages/season-deco-right.png");
+}
+
+.season-product .product {
+    position: absolute;
+    top: 50%;
+    left: 12%;
+    margin-top: calc(418px / -2);
 }
 
 .season-product .text-group {
     position: absolute;
-    top: 110px;
-    right: 100px;
+    height: 206px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    right: 12%;
 }
 
 .season-product .text-group .title {
-    margin-bottom: 10px;
+    margin-bottom: 36px;
 }
 
-.season-product .text-group .description {
-    margin-bottom: 15px;
+.season-product .text-group .btn {
+    font-size: 15px;
+    padding: 8px 0;
 }
 
-.season-product .text-group .more {
-    
-}
-
-.season-product .floating3 {
-    /* 2. CSS상에서 부모 요소를 .youtube가 아닌 .season-product로 바꿔 주어야 제대로 스타일이 적용될 수 있음! */
-    position: absolute;
-    top: -200px; 
-    /* 3. 원래 bottom: 200px이었던 부분을 top: -200px로 바꿔 줌. 
-    아래에서 200px만큼 올라갔다는 것은, 위에서부터 -200만큼 내려갔다는 것과 같음 */
-    right: 0;
-}
-
-/* RESERVE COFFEE */
-.reserve-coffee {
-    background-image: url("/assets/newImages/reserve_bg.png");
-    background-repeat: no-repeat;
-    background-position-y: 50px;
-    background-position-x: -280px;
-}
-
-.reserve-coffee .inner {
+/* RESERVE PRODUCT */
+.reserve-product {
+    z-index: 0;
+    position: relative;
     height: 400px;
+    background-image: url("/assets/newImages/reserve-product-bg.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow: hidden;
 }
 
-.reserve-coffee .reserve-logo {
-    position: absolute;
-    top: 110px;
-    left: 0;
+.reserve-product .reserve-title {
+    position: relative;
+    z-index: 10;
+    padding-top: 82px;
+    max-width: 1080px;
+    margin: 0 auto;
+    /* 꼭 요소의 넓이를 명시하지 않아도 margin auto가 작동하는 경우가 있다.
+    1. overflow: hidden
+    2. max(min)-width */
+    box-sizing: border-box;
 }
 
-.reserve-coffee .text-group {
-    position: absolute;
-    top: 124px;
-    left: 208px;
+.reserve-product .reserve-title img {
+    width: auto;
+    transform: translateX(-11px);
 }
 
-.reserve-coffee .product {
+.reserve-product .reserve-visual {
+    display: block;
     position: absolute;
-    top: 0;
-    right: 0;
+    bottom: 0;
+    right: -28.5%;
+}
+
+.reserve-product .btn-wrap {
+    position: relative;
+    z-index: 10;
+    max-width: 1080px;
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 254px;
+    box-sizing: border-box;
 }
 
 /* PICK YOUR FAVORITE */
 .pick-your-favorite {
+    position: relative;
     background-image: url("/assets/images/favorite_bg.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -777,7 +875,7 @@ header .badges .badge {
 }
 
 .pick-your-favorite .text-group {
-    margin-left: 100px;
+    margin-left: 40px;
     display: flex;
     width: 362px;
     flex-wrap: wrap;
@@ -792,61 +890,58 @@ header .badges .badge {
     margin-bottom: 40px;
 }
 
-/* RESERVE STORE */
-.reserve-store {
-    background-image: url("/assets/images/reserve_store_bg.jpg");
+.pick-your-favorite .image {
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    right: 40px;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
-    background-size: cover; 
+    width: 672px;
+    height: 458px;
+    background-image: url("/assets/newImages/favorite-img.png");
+    
 }
 
-.reserve-store .inner {
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* RESERVE MAGAZINE */
+.reserve-coffee {
+    background-image: url("/assets/newImages/magazine_bg.png");
+    background-repeat: no-repeat;
+    background-position-y: 50px;
+    background-position-x: -280px;
 }
 
-.reserve-store .medal {
-    height: 334px;
-    width: 334px;
-    perspective: 600px;
+.reserve-coffee .inner {
+    height: 400px;
 }
 
-.reserve-store .medal .front,
-.reserve-store .medal .back {
+.reserve-coffee .reserve-title {
+    position: relative;
+    z-index: 10;
+    padding-top: 135px;
+    padding-left: 55px;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.reserve-coffee .reserve-visual {
+    display: block;
     position: absolute;
-    width: 334px;
-    height: 334px;
-    backface-visibility: hidden;
-    transition: 1s;
+    bottom: auto;
+    top: 0;
+    right: 50%;
+    margin-right: -483px;
 }
 
-.reserve-store .medal .front {
-    transform: rotateY(0deg);
+.reserve-coffee .btn-wrap {
+    position: relative;
+    z-index: 10;
+    margin-top: 28px;
+    padding-left: 352px;
 }
-
-.reserve-store .medal:hover .front {
-    transform: rotateY(180deg)
-}
-
-
-.reserve-store .medal .back {
-    transform: rotateY(-180deg);
-} 
-
-.reserve-store .medal:hover .back {
-    transform: rotateY(0deg)
-} 
-
-.reserve-store .medal .back .btn {
-    position: absolute;
-    top: 240px;
-    left: 0;
-    right: 0;
-    margin: auto;
-} 
 
 /* FIND STORE */
 .find-store {
